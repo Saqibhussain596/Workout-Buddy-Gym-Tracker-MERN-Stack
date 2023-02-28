@@ -1,5 +1,5 @@
 {
-  "proxy": "https://gym-tracker-backend.onrender.com",
+  "proxy": "https://localhost3000",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
