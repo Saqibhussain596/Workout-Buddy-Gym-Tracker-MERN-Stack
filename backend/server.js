@@ -3,10 +3,10 @@ const morgan = require("morgan");
 const express = require("express");
 const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workoutsRoutes");
-
+const cors = require("cors");
 // express app
 const app = express();
-
+app.use(cors());
 mongoose.set("strictQuery", true);
 // connect to database
 mongoose

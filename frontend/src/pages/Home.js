@@ -7,7 +7,9 @@ export default function Home() {
   const { workouts, dispatch } = useWorkoutsContext();
   useEffect(() => {
     const fetchWorkout = async () => {
-      const response = await fetch(`${BASE_URL}/api/workouts/`);
+      const response = await fetch(
+        "https://gym-tracker-backend.onrender.com/api/workouts"
+      );
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });

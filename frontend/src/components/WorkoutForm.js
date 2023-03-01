@@ -11,13 +11,16 @@ export default function WorkoutForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const workout = { title, load, reps };
-    const response = await fetch(`${BASE_URL}/api/workouts/`, {
-      method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://gym-tracker-backend.onrender.com/api/workouts",
+      {
+        method: "POST",
+        body: JSON.stringify(workout),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
     if (!response.ok) {
       setError(json.error);
